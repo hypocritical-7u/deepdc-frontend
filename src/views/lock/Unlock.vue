@@ -56,11 +56,21 @@
     <Avatar class="userinfo-unlock" />
     <el-form :model="lockModel" :rules="lockRules" ref="lockForm">
       <el-form-item prop="password">
-        <el-input type="password" v-model.trim="lockModel.password" autocomplete="off" placeholder="请输入锁屏密码或登录密码"
-          @keyup.enter="submitForm">
+        <el-input
+          type="password"
+          v-model.trim="lockModel.password"
+          autocomplete="off"
+          placeholder="请输入锁屏密码或登录密码"
+          @keyup.enter="submitForm"
+        >
           <template #append>
-            <el-button type="primary" class="btn-unlock" icon="el-icon-right" :loading="loading" @click="submitForm">
-            </el-button>
+            <el-button
+              type="primary"
+              class="btn-unlock"
+              icon="el-icon-right"
+              :loading="loading"
+              @click="submitForm"
+            ></el-button>
           </template>
         </el-input>
       </el-form-item>
@@ -215,12 +225,12 @@ export default defineComponent({
   justify-content: center;
 
   ::v-deep(.el-input-group__append) {
-    background: $mainColor  !important;
-    border-color: $mainColor  !important;
+    background: $mainColor !important;
+    border-color: $mainColor !important;
   }
 
   .btn-unlock {
-    background: $mainColor  !important;
+    background: $mainColor !important;
     color: #fff !important;
 
     ::v-deep(i) {

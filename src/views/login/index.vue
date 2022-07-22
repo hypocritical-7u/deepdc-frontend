@@ -14,14 +14,31 @@
     <el-form class="form" :model="model" :rules="rules" ref="loginForm">
       <h1 class="title">Vue3 Element Admin</h1>
       <el-form-item prop="userName">
-        <el-input class="text" v-model="model.userName" prefix-icon="el-icon-user-solid" clearable placeholder="用户名" />
+        <el-input
+          class="text"
+          v-model="model.userName"
+          prefix-icon="el-icon-user-solid"
+          clearable
+          placeholder="用户名"
+        />
       </el-form-item>
       <el-form-item prop="password">
-        <el-input class="text" v-model="model.password" prefix-icon="el-icon-lock" show-password clearable
-          placeholder="密码" />
+        <el-input
+          class="text"
+          v-model="model.password"
+          prefix-icon="el-icon-lock"
+          show-password
+          clearable
+          placeholder="密码"
+        />
       </el-form-item>
       <el-form-item>
-        <el-button :loading="loading" type="primary" class="btn" @click="submit">
+        <el-button
+          :loading="loading"
+          type="primary"
+          class="btn"
+          @click="submit"
+        >
           {{ btnText }}
         </el-button>
       </el-form-item>
