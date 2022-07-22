@@ -10,7 +10,7 @@
  * @Donate: https://huzhushan.gitee.io/vue3-element-admin/donate/
  */
 import { fixedRoutes, asyncRoutes } from '@/router'
-import { GetMenus } from '@/api/menu'
+import { GetMenus } from '@/api/home'
 import router from '@/router'
 
 // const hasPermission = (role, route) => {

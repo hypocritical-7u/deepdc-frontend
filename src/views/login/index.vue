@@ -14,31 +14,14 @@
     <el-form class="form" :model="model" :rules="rules" ref="loginForm">
       <h1 class="title">Vue3 Element Admin</h1>
       <el-form-item prop="userName">
-        <el-input
-          class="text"
-          v-model="model.userName"
-          prefix-icon="el-icon-user-solid"
-          clearable
-          placeholder="用户名"
-        />
+        <el-input class="text" v-model="model.userName" prefix-icon="el-icon-user-solid" clearable placeholder="用户名" />
       </el-form-item>
       <el-form-item prop="password">
-        <el-input
-          class="text"
-          v-model="model.password"
-          prefix-icon="el-icon-lock"
-          show-password
-          clearable
-          placeholder="密码"
-        />
+        <el-input class="text" v-model="model.password" prefix-icon="el-icon-lock" show-password clearable
+          placeholder="密码" />
       </el-form-item>
       <el-form-item>
-        <el-button
-          :loading="loading"
-          type="primary"
-          class="btn"
-          @click="submit"
-        >
+        <el-button :loading="loading" type="primary" class="btn" @click="submit">
           {{ btnText }}
         </el-button>
       </el-form-item>
@@ -55,7 +38,7 @@ import {
   ref,
   computed,
 } from 'vue'
-import { Login } from '@/api/login'
+import { Login } from '@/api/user'
 import { useStore } from 'vuex'
 import { useRouter, useRoute } from 'vue-router'
 
@@ -138,31 +121,37 @@ export default defineComponent({
   height: 100%;
   overflow: hidden;
   background: #2d3a4b;
+
   .form {
     width: 520px;
     max-width: 100%;
     padding: 0 24px;
     box-sizing: border-box;
     margin: 160px auto 0;
+
     .title {
       color: #fff;
       text-align: center;
       font-size: 24px;
       margin: 0 0 24px;
     }
+
     .text {
       font-size: 16px;
+
       :deep(.el-input__inner) {
         border: 1px solid rgba(255, 255, 255, 0.1);
         background: rgba(0, 0, 0, 0.1);
         color: #fff;
         height: 48px;
         line-height: 48px;
+
         &::placeholder {
           color: rgba(255, 255, 255, 0.2);
         }
       }
     }
+
     .btn {
       width: 100%;
     }

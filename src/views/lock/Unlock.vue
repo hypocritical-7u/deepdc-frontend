@@ -56,21 +56,11 @@
     <Avatar class="userinfo-unlock" />
     <el-form :model="lockModel" :rules="lockRules" ref="lockForm">
       <el-form-item prop="password">
-        <el-input
-          type="password"
-          v-model.trim="lockModel.password"
-          autocomplete="off"
-          placeholder="请输入锁屏密码或登录密码"
-          @keyup.enter="submitForm"
-        >
+        <el-input type="password" v-model.trim="lockModel.password" autocomplete="off" placeholder="请输入锁屏密码或登录密码"
+          @keyup.enter="submitForm">
           <template #append>
-            <el-button
-              type="primary"
-              class="btn-unlock"
-              icon="el-icon-right"
-              :loading="loading"
-              @click="submitForm"
-            ></el-button>
+            <el-button type="primary" class="btn-unlock" icon="el-icon-right" :loading="loading" @click="submitForm">
+            </el-button>
           </template>
         </el-input>
       </el-form-item>
@@ -87,7 +77,7 @@ import Avatar from '@/components/Avatar/index.vue'
 import { AesEncryption } from '@/utils/encrypt'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-import { Login } from '@/api/login'
+import { Login } from '@/api/user'
 
 export default defineComponent({
   components: {
@@ -200,6 +190,7 @@ export default defineComponent({
   margin: 0;
   display: flex;
   align-items: flex-end;
+
   .unlock-btn {
     color: #aaa;
     font-size: 16px;
@@ -208,6 +199,7 @@ export default defineComponent({
     cursor: pointer;
   }
 }
+
 .unlock-modal {
   position: fixed;
   z-index: 10;
@@ -223,20 +215,23 @@ export default defineComponent({
   justify-content: center;
 
   ::v-deep(.el-input-group__append) {
-    background: $mainColor !important;
-    border-color: $mainColor !important;
+    background: $mainColor  !important;
+    border-color: $mainColor  !important;
   }
 
   .btn-unlock {
-    background: $mainColor !important;
+    background: $mainColor  !important;
     color: #fff !important;
+
     ::v-deep(i) {
       transform: scale(1.5);
     }
   }
 }
+
 .userinfo-unlock {
   margin-bottom: 16px;
+
   ::v-deep(h3) {
     color: #fff;
   }
